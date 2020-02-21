@@ -6,12 +6,13 @@ import math
 print("#-----------CALCULATOR--------#\n")
 print("Spanish version | software v1.0.2")
 print("")
-print("Si quieres sumar coloca: 'suma'")
-print("Si quieres restar coloca: 'resta'")
-print("Si quieres dividir coloca: 'divide'")
-print("Si quieres multiplicar coloca: 'multiplica'")
-print("Si quieres sacar la raíz cuadrada coloca: 'raiz cuadrada'")
-print("Si quieres salir coloca: 'salir ó exit'")
+print("Si quieres SUMAR coloca: 'suma'")
+print("Si quieres RESTAR coloca: 'resta'")
+print("Si quieres DIVIDIR coloca: 'divide'")
+print("Si quieres MULTIPLICAR coloca: 'multiplica'")
+print("Si quieres sacar la RAÍZ CUADRADA coloca: 'raiz cuadrada'")
+print("Si quieres SALIR coloca: 'salir ó exit'")
+print("Si necesitas AYUDA coloca: 'ayuda ó help'")
 print("")
 
 def sqrt(value_one):
@@ -39,46 +40,64 @@ def multiply(valor_uno, valor_dos):
     return valor_uno * valor_dos
 
 while True:
-    date = str(input("¿Qué deseas hacer?: ")).lower()
+    data = str(input("¿Qué deseas hacer?: ")).lower()
     
     try:
 
-        if date == 'raiz cuadrada':
+        if data == 'raiz cuadrada':
             num_one = float(input("Raíz cuadrada de: "))
             print(sqrt(num_one))
 
-        if date == 'suma':
+        if data == 'suma':
             num_one = float(input("Valor uno: "))
             num_two = float(input("Valor dos: "))
             print(sum(num_one, num_two))
 
-        if date == 'resta':
+        if data == 'resta':
             num_one = float(input("Valor uno: "))
             num_two = float(input("Valor dos: "))
             print(subtract(num_one, num_two))
 
-        if date == 'divide':
+        if data == 'divide':
             num_one = float(input("Valor uno: "))
             num_two = float(input("Valor dos: "))
             print(divide(num_one, num_two))
 
-        if date == 'multiplica':
+        if data == 'multiplica':
             num_one = float(input("Valor uno: "))
             num_two = float(input("Valor dos: "))
             print(multiply(num_one, num_two))
 
-        if date == 'salir' or date == 'exit':
+        if (data == 'salir' or data == 'exit'):
             print("Esperamos haberte ayudade ;)")
             break
     
         if (
-                date != 'raiz cuadrada' and
-                date != 'suma'          and
-                date != 'multiplica'    and
-                date != 'resta'         and
-                date != 'divide'        ):
+                data != 'raiz cuadrada' and
+                data != 'suma'          and
+                data != 'multiplica'    and
+                data != 'resta'         and
+                data != 'ayuda'         and
+                data != 'help'          and
+                data != 'exit'          and
+                data != 'salir'         and
+                data != 'divide'        ):
             print("Lo que ingresaste es incorrecto, intentalo de nuevo ;)")
+        
+        if (data == 'ayuda' or data == 'help'):
+            print("")
+            print("AYUDA EN CAMINO ;)")
+            print("")
+            print("Si quieres SUMAR coloca: 'suma'")
+            print("Si quieres RESTAR coloca: 'resta'")
+            print("Si quieres DIVIDIR coloca: 'divide'")
+            print("Si quieres MULTIPLICAR coloca: 'multiplica'")
+            print("Si quieres sacar la RAÍZ CUADRADA coloca: 'raiz cuadrada'")
+            print("Si quieres SALIR coloca: 'salir ó exit'")
+            print("Si necesitas AYUDA coloca: 'ayuda ó help'")
+            print("")
 
+    
     except ValueError:
         print("Error #904: Debes ingresar un número")
 

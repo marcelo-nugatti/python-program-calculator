@@ -4,7 +4,7 @@
 import math
 
 print("#-----------CALCULATOR--------#\n")
-print("Spanish version | software v1.0.1")
+print("Spanish version | software v1.0.2")
 print("")
 print("Si quieres sumar coloca: 'suma'")
 print("Si quieres restar coloca: 'resta'")
@@ -31,7 +31,7 @@ def divide(value_one, value_two):
     try:
         return value_one / value_two
     except ZeroDivisionError:
-        print("No se puede dividir entre 0")
+        print("Error #921: No se puede dividir entre 0")
         return "Operación errónea"
 
 def multiply(valor_uno, valor_dos):
@@ -40,33 +40,46 @@ def multiply(valor_uno, valor_dos):
 
 while True:
     date = str(input("¿Qué deseas hacer?: ")).lower()
+    
+    try:
 
-    if date == 'raiz cuadrada':
-        num_one = float(input("Raíz cuadrada de: "))
-        print(sqrt(num_one))
+        if date == 'raiz cuadrada':
+            num_one = float(input("Raíz cuadrada de: "))
+            print(sqrt(num_one))
 
-    if date == 'suma':
-        num_one = float(input("Valor uno: "))
-        num_two = float(input("Valor dos: "))
-        print(sum(num_one, num_two))
+        if date == 'suma':
+            num_one = float(input("Valor uno: "))
+            num_two = float(input("Valor dos: "))
+            print(sum(num_one, num_two))
 
-    if date == 'resta':
-        num_one = float(input("Valor uno: "))
-        num_two = float(input("Valor dos: "))
-        print(subtract(num_one, num_two))
+        if date == 'resta':
+            num_one = float(input("Valor uno: "))
+            num_two = float(input("Valor dos: "))
+            print(subtract(num_one, num_two))
 
-    if date == 'divide':
-        num_one = float(input("Valor uno: "))
-        num_two = float(input("Valor dos: "))
-        print(divide(num_one, num_two))
+        if date == 'divide':
+            num_one = float(input("Valor uno: "))
+            num_two = float(input("Valor dos: "))
+            print(divide(num_one, num_two))
 
-    if date == 'multiplica':
-        num_one = float(input("Valor uno: "))
-        num_two = float(input("Valor dos: "))
-        print(multiply(num_one, num_two))
+        if date == 'multiplica':
+            num_one = float(input("Valor uno: "))
+            num_two = float(input("Valor dos: "))
+            print(multiply(num_one, num_two))
 
-    if date == 'salir' or date == 'exit':
-        print("Esperamos haberte ayudade ;)")
-        break
+        if date == 'salir' or date == 'exit':
+            print("Esperamos haberte ayudade ;)")
+            break
+    
+        if (
+                date != 'raiz cuadrada' and
+                date != 'suma'          and
+                date != 'resta'         and
+                date != 'divide'        ):
+            print("Lo que ingresaste es incorrecto, intentalo de nuevo ;)")
+
+    except ValueError:
+        print("Error #904: Debes ingresar un número")
+
 
 # End of the program.

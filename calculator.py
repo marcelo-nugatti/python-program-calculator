@@ -74,6 +74,7 @@ while True:
         if (
                 date != 'raiz cuadrada' and
                 date != 'suma'          and
+                date != 'multiplica'    and
                 date != 'resta'         and
                 date != 'divide'        ):
             print("Lo que ingresaste es incorrecto, intentalo de nuevo ;)")

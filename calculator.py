@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+import math
+
 print("#-----------CALCULATOR--------#\n")
 print("Spanish version | software v1.0.1")
 print("")
@@ -8,8 +10,13 @@ print("Si quieres sumar coloca: 'suma'")
 print("Si quieres restar coloca: 'resta'")
 print("Si quieres dividir coloca: 'divide'")
 print("Si quieres multiplicar coloca: 'multiplica'")
+print("Si quieres sacar la raíz cuadrada coloca: 'raiz cuadrada'")
 print("Si quieres salir coloca: 'salir ó exit'")
 print("")
+
+def sqrt(value_one):
+    """Su funcion es encontrar la raíz cuadrada de un número"""
+    return math.sqrt(value_one)
 
 def sum(value_one, value_two):
     """Su función es sumar"""
@@ -32,7 +39,11 @@ def multiply(valor_uno, valor_dos):
     return valor_uno * valor_dos
 
 while True:
-    date = str(input("¿Qué deseas hacer?: "))
+    date = str(input("¿Qué deseas hacer?: ")).lower()
+
+    if date == 'raiz cuadrada':
+        num_one = float(input("Raíz cuadrada de: "))
+        print(sqrt(num_one))
 
     if date == 'suma':
         num_one = float(input("Valor uno: "))
